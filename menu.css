@@ -1,0 +1,281 @@
+
+
+/* 1) Первым делом сбросим все отступы которые могут задавать разные браузеры*/
+
+.dws-menu *{
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 2) хедеру пропишем ширину margin-top в 200 пикселей
+   и это оцентрует меню по середине экрана и по верху в строчку.
+*/
+
+header {
+	margin-top: 40px; /* отступ сверху для всего меню*/
+	font-family: Cuprum, Arial, Helvetical, sans-serif; /* подключил шрифт Cuprum от Гугла*/
+}
+
+/* 3. Затем назначим шрифт Киприм - скачать здесь https://fonts.google.com - search - Cuprum
+жмем там + Select this font - и там в окошке посмотрим строку подключения
+- в menu.html подключаем шрифт и здесь в menu.css делаем также подключение шрифта в блоке header
+*/
+
+
+/* 4. скроем маркеры у данных списков*/
+
+.dws-menu ul,
+.dws-menu ol{
+	list-style:none;
+}
+
+
+/* стили отобразим по горизонтали при помощи display flex  и оцентруем их*/
+
+.dws-menu > ul{
+	display: flex;
+	justify-content: center;
+}
+
+/* затем оформим наше меню 
+- отберем ссылки и делаем их блочными элементами
+- далее зададим фон background
+- пропишем отступы padding
+- укажем размер шрифта font-size
+- зададим цвет color
+- и уберем подчеркивание text-decoration: none
+- сделаем пункты заглавными буквами text-transform: uppercase
+*/
+
+.dws-menu > ul li a{
+	display: block;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+43,ededed+58 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 43%, rgba(237,237,237,1) 58%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 43%,rgba(237,237,237,1) 58%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 43%,rgba(237,237,237,1) 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	/*background: #ececed;*/
+	padding: 15px 30px 15px 40px;
+	font-size: 14px;
+	color: #454547;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+}
+
+/* Затем отпозиционируем иконки из списка
+- для этого присвоим спискам ли position relative
+для дальнейшей центровки иконок
+
+
+- остальным спискам назначим просто разделитель 
+в виде бордюра в 1 пиксель серого цвета border-right: 1px solid #c7c8ca
+*/
+
+.dws-menu > ul li{
+	position: relative;
+	border-right: 1px solid #c7c8ca;
+}
+
+/* отберем иконки по классу
+- и отпозиционируем их - абсолютно
+- сделаем отступы сверху top в 15 пикселей
+- и слева left - 12 пикселей
+- и увеличим шрифт
+*/
+
+.dws-menu > ul li > a i.fa{
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	font-size: 18px;
+}
+
+/* Зададим спискам ЛИ первому и последнему бордюры
+- выбираем первый и задаем ему border left в 1 пиксель
+*/
+
+.dws-menu > ul li:first-child{
+	border-left: 1px solid #b2b3b5;
+}
+
+
+/* и отбираем последующий ЛИ бордюр
+и задаем ему тоже серый цвет
+*/
+
+.dws-menu > ul li:last-child{
+	border-right: 1px solid #babbbb;
+
+}
+
+
+/* меню приобрело внешний вид
+ и теперь приступим к написанию стилей при наведении
+
+АНИМИРУЕМ МЕНЮ 
+делаем активными кнопки при наведении
+  */
+
+
+/* отбираем ссылки при наведении
+- назначаем цвет самого блока
+- и цвет самого шрифта
+- добавим еще тень и сделаем ее расплывчатой
+- и сделаем плавное появление с помощью transition
+
+Теперь чтобы элементы не только плавно появлялись но и плавно
+исчезали, для этого добавим этот же стиль к нашим основным ссылкам
+- этот блок находится вверху
+.dws-menu > ul li a{... transition: all 0.3s ease;}
+**/
+
+.dws-menu li a:hover{
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */
+background: rgb(181,189,200); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+
+	/* background: #454547; */
+	color: #ffffff;
+	box-shadow: 1px 5px 10px -5px black;
+	transition: all 0.3s ease;
+}
+
+
+/* НА ЭТОМ ОСНОВНОЕ МЕНЮ У НАС ЗАКОНЧЕНО
+и приступим к описанию подменю и вложенных в них разделах
+ */
+
+
+/* ВЫПАДАЮЩЕЕ МЕНЮ 
+описываем многоуровневое меню в css/html 
+*/
+
+
+/* открываем menu.html и добавляем там дополнительные подменю*/
+
+/* затем открываем css файл и опишем стили */
+
+
+/* SUB MENU*/
+
+/* отбираем эти списки и позиционируем их абсолютно
+- зададим им минимальную ширину в 150 пикселей */
+
+.dws-menu li ul{
+	position: absolute;
+	min-width: 150px;
+	display: none; /* это скрывает все подпункты*/
+}
+
+/* пропишем спискам бордюр в 1 пиксель для окантовки */
+
+.dws-menu li > ul li{
+	border: 1px solid #c7c8ca;
+}
+
+/* для ссылок подменю установим отступы в 10 пикселей
+   чтобы текст у нас влазил и не переводился на вторую строчку
+   - уберем трансформацию
+   - и сделаем немного потемнее фон
+*/
+
+.dws-menu li > ul li a{
+	padding: 10px;
+	text-transform: none;
+	background: #e4e4e5;
+}
+
+/* затем создадим еще одно вложенное меню 
+для этого перейдем в ФАЙЛ РАЗМЕТКИ menu.html
+*/
+
+/* они (подменюшка 3 уровня) вывелись 
+но скрыты под основным меню
+- теперь позиционируем абсолютно
+вложенную ее и сдвинем его в 150 пикселей в сторону
+*/
+
+/* - отберем ul вложенные и с помощью позицион абсолют
+указываем вправо 150 пикселей
+*/
+
+.dws-menu li > ul li ul{
+	position: absolute;
+	right: -150px;
+	top: 0;
+}
+
+/* далее сделаем подменю при наведении на основные пункты меню
+
+для этого пропишем выше в блоке
+
+.dws-menu li ul{
+	position: absolute;
+	min-width: 150px;
+	display: none;  ----- это скрывает все подпункты 
+}
+
+а для их (подпунктов) появления достаточно просто
+отобрать списки при наведении 
+и назначить им display: block;
+
+теперь если будем наводить на меню пункты подменю будут высвечиваться
+ */
+
+ .dws-menu li:hover > ul{
+ 	display: block;
+ }
+
+ /* далее можно добавлять много уровневые меню простым копированием
+    блока ul и назначать его пунктам меню - речь о файле menu.html
+ */
+
+
+ /* ЗАВЕРШАЮЩИМ ЭТАПОМ ОФОРМИМ КНОПКИ ИНГРИДИЕНТАМИ
+
+- воспользуемся css-генератором 
+http://www.colorzilla.com/gradient-editor/
+
+копируем код в буфер обмена
+
+находим блок кода 
+
+.dws-menu > ul li a{
+	display: block;
+	background: #ececed;
+	padding: 15px 30px 15px 40px;
+	font-size: 14px;
+	color: #454547;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+}
+
+и вставляем этот код вместо строчки background
+
+ЕЩЕ РАЗ ДЛЯ ПОДМЕНЮ воспользуемся css-генератором 
+http://www.colorzilla.com/gradient-editor/
+
+ДРУГОЙ ПРЕСЕТ ИСПОЛЬЗУЕМ БОЛЕЕ ТЕМНЫЙ
+
+копируем код в буфер обмена
+
+находим блок кода 
+
+.dws-menu li a:hover{
+	background: #454547;
+	color: #ffffff;
+	box-shadow: 1px 5px 10px -5px black;
+	transition: all 0.3s ease;
+}
+
+и вставляем этот код вместо строчки background
+
+ */
