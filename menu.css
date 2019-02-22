@@ -50,6 +50,9 @@ header {
 
 .dws-menu > ul li a{
 	display: block;
+
+/* ЭТО ГРАДИЕНТ СВЕТЛО-СЕРЫЙ ПРИ НАВЕДЕНИИ НА ОСНОВНОЙ ПУНКТ МЕНЮ	
+
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+43,ededed+58 */
 background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 43%, rgba(237,237,237,1) 58%); /* FF3.6-15 */
